@@ -108,14 +108,10 @@ function paint() {
   head.style.left = `calc(${(f / END) * 100}% - 1px)`;
   track.setAttribute("aria-valuenow", String(f));
 }
-if ("requestVideoFrameCallback" in HTMLVideoElement.prototype) {
-  const loop = () => { paint(); v.requestVideoFrameCallback(loop); };
-  v.requestVideoFrameCallback(loop);
-} else {
-  const loop = () => { paint(); requestAnimationFrame(loop); };
-  requestAnimationFrame(loop);
-}
+const loop = () => { paint(); requestAnimationFrame(loop); };
+requestAnimationFrame(loop);
 v.addEventListener("seeked", paint);
+v.addEventListener("timeupdate", paint);
 const play = () => { v.play().catch(() => {}); pp.textContent = "Pause"; };
 const stop = () => { v.pause(); pp.textContent = "Play"; };
 rateBtns.forEach(b => b.onclick = () => {
