@@ -62,20 +62,20 @@ button:focus-visible, .track:focus-visible { outline: 2px solid var(--gold); out
     <span class="tag t1">1ST PERSON</span>
     <span class="tag t2">3RD PERSON</span>
     <span class="tag t3">3RD PERSON · FRONT</span>
-    <span class="fr" id="fr">f00 / 50</span>
+    <span class="fr" id="fr">f00 / 31</span>
   </div>
 
   <div>
-    <div class="track" id="track" tabindex="0" role="slider" aria-label="Scrub frames" aria-valuemin="0" aria-valuemax="50">
-      <div class="seg" style="flex:7">guard</div>
-      <div class="seg hot" style="flex:6">strike</div>
-      <div class="seg" style="flex:7">bite</div>
-      <div class="seg hot" style="flex:6">rip out</div>
-      <div class="seg" style="flex:24">recover</div>
-      <div class="mark" style="left:calc(26% - 1px)"></div>
+    <div class="track" id="track" tabindex="0" role="slider" aria-label="Scrub frames" aria-valuemin="0" aria-valuemax="31">
+      <div class="seg" style="flex:6">load</div>
+      <div class="seg hot" style="flex:4">strike</div>
+      <div class="seg" style="flex:3">bite</div>
+      <div class="seg hot" style="flex:5">rip out</div>
+      <div class="seg" style="flex:13">recover</div>
+      <div class="mark" style="left:calc(32.26% - 1px)"></div>
       <div class="head" id="head"></div>
     </div>
-    <div class="scale"><span>f0</span><span>contact f13</span><span>f50</span></div>
+    <div class="scale"><span>f0</span><span>contact f10</span><span>f31</span></div>
   </div>
 
   <div class="ctl">
@@ -90,14 +90,15 @@ button:focus-visible, .track:focus-visible { outline: 2px solid var(--gold); out
 
   <div class="specs">
     <span>skeleton <b>vanilla Reforger, 157 bones</b></span>
-    <span>length <b>51 frames · 30 fps · 1.7 s</b></span>
-    <span>contact <b>frame 13</b></span>
+    <span>length <b>32 frames · 30 fps · 1.07 s</b></span>
+    <span>contact <b>frame 10</b></span>
     <span>knife <b>RightHandProp, keyed</b></span>
     <span>bodies <b>male + female</b></span>
+    <span>base <b>vanilla idle in and out, feet planted</b></span>
   </div>
 </main>
 <script>
-const FPS = 30, END = 50, HIT = 13;
+const FPS = 30, END = 31, HIT = 10;
 const v = document.getElementById("v"), fr = document.getElementById("fr"), head = document.getElementById("head"), track = document.getElementById("track"), pp = document.getElementById("pp");
 const rateBtns = [...document.querySelectorAll("[data-rate]")];
 const frame = () => Math.min(END, Math.floor(v.currentTime * FPS + 1e-3));
